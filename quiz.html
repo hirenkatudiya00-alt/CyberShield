@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberShield - Quiz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#050505;
+color:#00ff88;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.9);
+border-bottom:1px solid #00ff88;
+z-index:1000;
+}
+
+.logo{
+font-family:Orbitron;
+font-size:26px;
+font-weight:bold;
+text-shadow:0 0 15px #00ff88;
+}
+
+nav ul{
+display:flex;
+gap:15px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#00ff88;
+text-decoration:none;
+}
+
+.container{
+max-width:1000px;
+margin:120px auto 50px;
+padding:20px;
+}
+
+h1{
+text-align:center;
+font-family:Orbitron;
+margin-bottom:30px;
+}
+
+.question{
+background:#101010;
+border:1px solid #00ff88;
+padding:20px;
+margin-bottom:20px;
+border-radius:15px;
+}
+
+.question h3{
+margin-bottom:10px;
+}
+
+label{
+display:block;
+margin:8px 0;
+}
+
+button{
+padding:15px 25px;
+background:#00ff88;
+color:#000;
+border:none;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.result{
+margin-top:25px;
+padding:20px;
+background:#101010;
+border:1px solid #00ff88;
+border-radius:15px;
+font-size:22px;
+text-align:center;
+}
+
+footer{
+text-align:center;
+padding:20px;
+border-top:1px solid #00ff88;
+margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+
+<div class="logo">CYBERSHIELD</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="password-checker.html">Checker</a></li>
+<li><a href="password-generator.html">Generator</a></li>
+<li><a href="security-guide.html">Guide</a></li>
+<li><a href="cyber-attacks.html">Threats</a></li>
+<li><a href="safety-tips.html">Tips</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Cyber Security Quiz</h1>
+
+<form id="quizForm">
+
+<div class="question">
+<h3>1. What is Phishing?</h3>
+<label><input type="radio" name="q1" value="1"> Fake attempt to steal information</label>
+<label><input type="radio" name="q1" value="0"> Antivirus Software</label>
+</div>
+
+<div class="question">
+<h3>2. What does 2FA stand for?</h3>
+<label><input type="radio" name="q2" value="1"> Two Factor Authentication</label>
+<label><input type="radio" name="q2" value="0"> Two File Access</label>
+</div>
+
+<div class="question">
+<h3>3. Which password is strongest?</h3>
+<label><input type="radio" name="q3" value="0"> 123456</label>
+<label><input type="radio" name="q3" value="1"> T@9m#X2!Lp</label>
+</div>
+
+<div class="question">
+<h3>4. What is Malware?</h3>
+<label><input type="radio" name="q4" value="1"> Malicious Software</label>
+<label><input type="radio" name="q4" value="0"> Web Browser</label>
+</div>
+
+<div class="question">
+<h3>5. HTTPS is used for?</h3>
+<label><input type="radio" name="q5" value="1"> Secure Communication</label>
+<label><input type="radio" name="q5" value="0"> Gaming</label>
+</div>
+
+<div class="question">
+<h3>6. What is Ransomware?</h3>
+<label><input type="radio" name="q6" value="1"> File Encryption Attack</label>
+<label><input type="radio" name="q6" value="0"> Search Engine</label>
+</div>
+
+<div class="question">
+<h3>7. Why update software?</h3>
+<label><input type="radio" name="q7" value="1"> Fix Security Vulnerabilities</label>
+<label><input type="radio" name="q7" value="0"> Increase Ads</label>
+</div>
+
+<div class="question">
+<h3>8. Which is a secure practice?</h3>
+<label><input type="radio" name="q8" value="1"> Unique Passwords</label>
+<label><input type="radio" name="q8" value="0"> Same Password Everywhere</label>
+</div>
+
+<div class="question">
+<h3>9. What is Spyware?</h3>
+<label><input type="radio" name="q9" value="1"> Software That Monitors Users</label>
+<label><input type="radio" name="q9" value="0"> Firewall</label>
+</div>
+
+<div class="question">
+<h3>10. Best protection against phishing?</h3>
+<label><input type="radio" name="q10" value="1"> Verify Links Before Clicking</label>
+<label><input type="radio" name="q10" value="0"> Click Every Link</label>
+</div>
+
+<button type="button" onclick="checkQuiz()">
+Submit Quiz
+</button>
+
+</form>
+
+<div id="result" class="result" style="display:none;"></div>
+
+</div>
+
+<footer>
+CyberShield Internship Project © 2026
+</footer>
+
+<script>
+
+function checkQuiz(){
+
+let score = 0;
+
+for(let i=1;i<=10;i++){
+
+let answer =
+document.querySelector('input[name="q'+i+'"]:checked');
+
+if(answer){
+score += parseInt(answer.value);
+}
+
+}
+
+document.getElementById("result").style.display="block";
+
+document.getElementById("result").innerHTML =
+"Your Score: " + score + " / 10";
+
+}
+
+</script>
+
+</body>
+</html>

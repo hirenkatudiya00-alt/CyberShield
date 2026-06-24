@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CyberShield - Cyber Attacks</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+body{
+background:#050505;
+color:#00ff88;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.9);
+border-bottom:1px solid #00ff88;
+z-index:1000;
+}
+
+.logo{
+font-family:Orbitron;
+font-size:26px;
+font-weight:bold;
+text-shadow:0 0 15px #00ff88;
+}
+
+nav ul{
+display:flex;
+gap:15px;
+list-style:none;
+flex-wrap:wrap;
+}
+
+nav a{
+color:#00ff88;
+text-decoration:none;
+}
+
+.container{
+max-width:1200px;
+margin:120px auto 50px;
+padding:20px;
+}
+
+h1{
+text-align:center;
+font-family:Orbitron;
+margin-bottom:40px;
+text-shadow:0 0 15px #00ff88;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.card{
+background:#101010;
+border:1px solid #00ff88;
+border-radius:15px;
+padding:25px;
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 25px #00ff88;
+}
+
+.card h2{
+margin-bottom:15px;
+}
+
+.card p{
+line-height:1.8;
+}
+
+.warning{
+margin-top:40px;
+padding:25px;
+background:#101010;
+border-left:5px solid red;
+border-radius:10px;
+}
+
+footer{
+text-align:center;
+padding:20px;
+border-top:1px solid #00ff88;
+margin-top:50px;
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+
+<div class="logo">CYBERSHIELD</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="password-checker.html">Checker</a></li>
+<li><a href="password-generator.html">Generator</a></li>
+<li><a href="security-guide.html">Guide</a></li>
+<li><a href="cyber-attacks.html">Threats</a></li>
+<li><a href="safety-tips.html">Tips</a></li>
+<li><a href="quiz.html">Quiz</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+
+</nav>
+
+<div class="container">
+
+<h1>Common Cyber Attacks</h1>
+
+<div class="grid">
+
+<div class="card">
+<h2>Phishing Attack</h2>
+<p>
+Fake emails, websites or messages are used to
+trick users into revealing passwords, banking
+details or personal information.
+</p>
+</div>
+
+<div class="card">
+<h2>Malware Attack</h2>
+<p>
+Malicious software enters a device and damages
+files, steals data or controls the system.
+</p>
+</div>
+
+<div class="card">
+<h2>Ransomware</h2>
+<p>
+Attackers encrypt files and demand money to
+restore access to important data.
+</p>
+</div>
+
+<div class="card">
+<h2>Spyware</h2>
+<p>
+Spyware secretly monitors user activity and
+collects sensitive information without consent.
+</p>
+</div>
+
+<div class="card">
+<h2>DDoS Attack</h2>
+<p>
+A server is flooded with massive traffic,
+making websites and online services unavailable.
+</p>
+</div>
+
+<div class="card">
+<h2>Social Engineering</h2>
+<p>
+Attackers manipulate people psychologically
+to gain unauthorized access to systems.
+</p>
+</div>
+
+</div>
+
+<div class="warning">
+
+<h2>How To Stay Safe?</h2>
+
+<p>
+Use strong passwords, enable 2FA, update software
+regularly, avoid suspicious links and always
+verify unknown emails before clicking.
+</p>
+
+</div>
+
+</div>
+
+<footer>
+CyberShield Internship Project © 2026
+</footer>
+
+</body>
+</html>
